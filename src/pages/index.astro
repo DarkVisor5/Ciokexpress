@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <!-- Header con Logo e Segnalibri -->
+    <header class="bg-brown-700 text-black py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <img src="/Logo.jpg" alt="Logo" class="h-20">
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#chi-siamo" class="hover:text-yellow-300">La nostra storia</a></li>
+                <li><a href="#prodotti" class="hover:text-yellow-300">I nostri prodotti</a></li>
+                <li><a href="#lavora-con-noi" class="hover:text-yellow-300">Lavora con noi</a></li>
+                <li><a href="#contatti" class="hover:text-yellow-300">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+<!-- Hero Section -->
+<section id="hero" class="text-center py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 flex items-center justify-center gap-10">
+        
+        <!-- Contenitore slider -->
+        <div class="relative w-56 h-auto overflow-hidden">
+            <div id="hero-slider" class="flex transition-transform duration-700">
+                <img src="/ciok_ginseng.png" alt="Ciok Ginseng" class="w-56 h-auto rounded-lg shadow-lg flex-shrink-0">
+                <img src="/ciok_pistacchio.png" alt="Ciok Pistacchio" class="w-56 h-auto rounded-lg shadow-lg flex-shrink-0">
+                <img src="/ciok_caffe.png" alt="Ciok Caffè" class="w-56 h-auto rounded-lg shadow-lg flex-shrink-0">
+                <img src="/ciok_nocciola.png" alt="Ciok Nocciola" class="w-56 h-auto rounded-lg shadow-lg flex-shrink-0">
+            </div>
+        </div>
+
+        <!-- Testo e pulsante -->
+        <div>
+            <h1 class="text-5xl font-extrabold text-brown-800 text-left">
+                L'eccellenza del cioccolato artigianale
+            </h1>
+            <p class="mt-4 text-lg text-gray-600 text-left">
+                Dal cuore dell'Italia, il cioccolato più pregiato lavorato con passione e tradizione.
+            </p>
+            <div class="mt-6 text-left">
+                <a href="#prodotti" class="inline-block px-8 py-4 bg-[#6B4226] text-white font-semibold rounded-lg shadow-md hover:bg-[#4E2F1E] hover:shadow-lg transition">
+                    Scopri i nostri prodotti
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript per lo swipe verso sinistra -->
+<script>
+    const slider = document.getElementById("hero-slider");
+    let index = 0;
+    const totalImages = slider.children.length;
+
+    function slideLeft() {
+        index = (index + 1) % totalImages; // Avanza nella lista
+        slider.style.transform = `translateX(-${index * 100}%)`; // Effetto scorrimento
+    }
+
+    setInterval(slideLeft, 3000); // Cambia immagine ogni 3 secondi
+</script>
+
+
+
+
+
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="bg-yellow-50 py-16">
+        <div class="container mx-auto text-center max-w-3xl">
+            <h2 class="text-4xl font-bold text-brown-800">La nostra storia</h2>
+            <p class="mt-4 text-gray-700">
+                Produciamo cioccolato di alta qualità da oltre 50 anni, rispettando la tradizione artigianale italiana.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sezione Prodotti in Evidenza -->
+    <section id="prodotti" class="container mx-auto py-16">
+        <h2 class="text-4xl font-bold text-center text-brown-800">I Nostri Prodotti</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="/pralina.jpg" alt="Pralina" class="mx-auto w-40 h-40 object-cover rounded-full">
+                <h3 class="text-2xl font-semibold mt-4">Praline Ripiene</h3>
+                <p class="text-gray-600">Un cuore morbido di gusto avvolto da finissimo cioccolato.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="/tavolette.jpg" alt="Tavolette" class="mx-auto w-40 h-40 object-cover rounded-full">
+                <h3 class="text-2xl font-semibold mt-4">Tavolette di Cioccolato</h3>
+                <p class="text-gray-600">Latte, fondente o nocciolato: il gusto autentico del cacao.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="/espositore.jpg" alt="Espositore" class="mx-auto w-40 h-40 object-cover rounded-full">
+                <h3 class="text-2xl font-semibold mt-4">Espositori</h3>
+                <p class="text-gray-600">Eleganti espositori per punti vendita e partner commerciali.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Lavora con noi -->
+<section id="lavora-con-noi" class="bg-yellow-100 py-16 text-center">
+    <div class="container mx-auto max-w-3xl">
+        <h2 class="text-4xl font-bold text-brown-800">Lavora con noi</h2>
+        <p class="mt-4 text-gray-700">
+            Sei un'azienda interessata a collaborare con noi? Offriamo soluzioni personalizzate per il tuo business.
+        </p>
+        <div class="mt-6"> <!-- Aggiunto per separare il bottone -->
+            <a href="#contatti" class="inline-block px-8 py-4 bg-[#6B4226] text-white font-semibold rounded-lg shadow-lg hover:bg-[#4E2F1E] transition">
+                Contattaci ora
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contatti & Newsletter -->
+<section id="contatti" class="bg-[#3E2723] text-white py-16 text-center">
+    <h2 class="text-3xl font-bold">Rimani aggiornato sulle nostre novità</h2>
+    <p class="mt-4 text-lg">Iscriviti alla nostra newsletter per ricevere offerte esclusive e news dal mondo del cioccolato.</p>
+    <form class="mt-6 max-w-lg mx-auto flex">
+        <input type="email" class="w-full px-4 py-2 rounded-l-lg text-gray-900" placeholder="Inserisci la tua email" required>
+        <button class="px-6 py-2 bg-yellow-400 text-[#4E2F1E] font-semibold rounded-r-lg hover:bg-yellow-500 transition">
+            Iscriviti
+        </button>
+    </form>
+</section>
+
+</Layout>
